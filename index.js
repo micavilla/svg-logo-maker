@@ -36,11 +36,11 @@ inquirer
   .then((data) => {
     let shape;
     if (data.shape === 'circle') {
-      shape = new Circle(data.textColor, data.text.toUpperCase(), data.shapeColor)
+      shape = new Circle(data.shapeColor, data.textColor, data.text.toUpperCase())
     } if (data.shape === 'triangle') {
-      shape = new Triangle(data.textColor, data.text.toUpperCase(), data.shapeColor)
+      shape = new Triangle(data.shapeColor, data.textColor, data.text.toUpperCase())
     } if (data.shape === 'square') {
-      shape = new Square(data.textColor, data.text.toUpperCase(), data.shapeColor)
+      shape = new Square(data.shapeColor, data.textColor, data.text.toUpperCase())
     }
 
     fs.writeFile("./examples/logo.svg", shape.render(), (err, result)=>{
