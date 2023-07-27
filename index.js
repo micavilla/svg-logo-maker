@@ -1,4 +1,5 @@
 const inquirer = require('inquirer');
+const { Circle, Triangle, Square } = require('./lib/shapes')
 const fs = require('fs');
 
 inquirer
@@ -32,3 +33,18 @@ inquirer
       choices: ['circle', 'triangle', 'square'],
     },
   ])
+  .then((data) => {
+    let shape;
+    if (data.shape === 'circle') {
+      shape = new Circle(data.textColor, data.text.toUpperCase(), data.shapeColor)
+    } if (data.shape === 'triangle') {
+      shape = new Triangle(data.textColor, data.text.toUpperCase(), data.shapeColor)
+    } if (data.shape === 'square') {
+      shape = new Square(data.textColor, data.text.toUpperCase(), data.shapeColor)
+    }
+
+    fs.writeFile("./examples/logo.svg", shape.render(), (err, result)=>{
+      if (err) throw err;
+      console.log('Generated logo.svg');
+    });
+  });
