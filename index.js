@@ -22,12 +22,12 @@ inquirer
     {
       type: 'input',
       name: 'textColor',
-      message: "What color would like your logo's text to be?",
+      message: "What color would like your logo's text to be? (Hexadecimal numbers are also accepted.)",
     },
     {
       type: 'input',
       name: 'shapeColor',
-      message: "What color would you like your logo's background to be?",
+      message: "What color would you like your logo's background to be? (Hexadecimal numbers are also accepted.)",
     },
     {
       type: 'list',
